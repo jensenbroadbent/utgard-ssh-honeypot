@@ -1,0 +1,16 @@
+# Python bytecode & environments
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# Secrets & local configs
+*.env
+*key*.pem
+*gemini*
+
+# Preserved structure but ignore local runtime output
+logs/*.json
+!logs/.gitkeep
+quarantine/*
+!quarantine/.gitkeep
