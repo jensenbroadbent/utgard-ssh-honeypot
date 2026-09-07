@@ -1,0 +1,18 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install dependencies
+RUN pip install --no-cache-dir paramiko ollama requests
+
+# Copy source code and files
+COPY . /app
+
+# Ensure log and quarantine directories exist
+RUN mkdir -p logs quarantine
+
+# Expose the SSH honeypot port
+EXPOSE 2222
+
+# Run the honeypot
+CMD ["python", "UtgardAI.py"]
